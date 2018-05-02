@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +23,27 @@
             <a class="navbar-brand w3_engineers" href="index.php">W3 Engineers Ltd.</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="employee_list.php">Employee List<span class="caret"></span></a>
+            <li class="active"><a href="login_dashboard.php">Home</a></li>
+            <li><a href="employee_list.php">Employee List</a>
             </li>
             <li><a href="#">Create Menu</a></li>
             <li><a href="view_menu.php"> View Menu</a> </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <?php
+                    echo $_SESSION['user'];
+                    ?>
+                    <span class="glyphicon glyphicon-log-in"></span>
+
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </li>
+
+
         </ul>
     </div>
 </nav>

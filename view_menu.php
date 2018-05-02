@@ -2,7 +2,7 @@
 
 <?php
 
-
+session_start();
 $connect=mysqli_connect("localhost","root","","w3_lunch");
 
 $query="select * from lunch_menu";
@@ -53,10 +53,10 @@ $result=mysqli_query($connect,$query);
         <table class="table table-bordered table-striped">
             <tr>
                 <th class="info">Date</th>
-                <th class="info">Menu1</th>
-                <th class="info">Menu2</th>
-                <th class="info">Menu3</th>
-                <th class="info">Menu4</th>
+                <th class="info">Fixed Item</th>
+                <th class="info">Item1</th>
+                <th class="info">Item2</th>
+                <th class="info">Item3</th>
                 <th class="info">Created_at</th>
             </tr>
             <?php

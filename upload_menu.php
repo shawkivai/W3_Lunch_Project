@@ -5,7 +5,7 @@
  * Date: 4/29/2018
  * Time: 7:28 PM
  */
-
+session_start();
 $connect=mysqli_connect("localhost","root","","w3_lunch");
 if(isset($_POST['upload'])){
     $i=0;
@@ -22,7 +22,9 @@ if(isset($_POST['upload'])){
                 // $created_at=mysqli_real_escape_string($connect,$data[5]);
                 if ($i > 0) {
                     $query = "insert into lunch_menu (date, menu1, menu2, menu3, menu4) VALUES ('$date','$menu1','$menu2','$menu3','$menu4')";
-                    mysqli_query($connect, $query);
+
+                    $query2="DELETE FROM lunch_menu WHERE expired_date <= NOW()";
+                    mysqli_query($connect, $query,$query2);
                 }
                 $i++;
             }

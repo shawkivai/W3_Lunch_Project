@@ -32,7 +32,7 @@ $result=mysqli_query($connect,$query);
             <a class="navbar-brand w3_engineers" href="index.php">W3 Engineers Ltd.</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="login_dashboard.php">Home</a></li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee List<span class="caret"></span></a>
             </li>
             <li><a href="#">Create Menu</a></li>

@@ -48,6 +48,12 @@ $result=mysqli_query($connect,$query);
 
     <h1 class="lunch_header">Welcome to W3 Engineers Lunch Admin Panel
     </h1>
+<div class="row">
+    <button class="btn btn-success btn-lg" id="button-pos"><a href="login_dashboard.php"> Update Menu</a></button>
+    <br><br>
+
+</div>
+
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">

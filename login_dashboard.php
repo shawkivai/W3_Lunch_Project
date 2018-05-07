@@ -65,7 +65,7 @@ session_start();
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-3">
-                <button type="submit" class="btn btn-success" name="upload">Upload</button>
+                <button type="submit" class="btn btn-success" name="upload"> Upload</button>
             </div>
         </div>
 

@@ -21,10 +21,10 @@ if(isset($_POST['upload'])){
                 $menu4 = mysqli_real_escape_string($connect, $data[4]);
                 // $created_at=mysqli_real_escape_string($connect,$data[5]);
                 if ($i > 0) {
-                    $query = "insert into lunch_menu (date, menu1, menu2, menu3, menu4) VALUES ('$date','$menu1','$menu2','$menu3','$menu4')";
+                    $query = "insert into snacks_menu (date, item1, item2, item3, item4) VALUES ('$date','$menu1','$menu2','$menu3','$menu4')";
 
-                    $query2="DELETE FROM lunch_menu WHERE expired_date <= NOW()";
-                    mysqli_query($connect, $query,$query2);
+//                    $query2="DELETE FROM lunch_menu WHERE expired_date <= NOW()";
+                    mysqli_query($connect, $query);
                 }
                 $i++;
             }
@@ -39,6 +39,4 @@ if(isset($_POST['upload'])){
     else{
         echo "select csv";
     }
-
-
 }

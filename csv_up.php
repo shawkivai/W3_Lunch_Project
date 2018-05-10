@@ -10,8 +10,6 @@ if($_FILES["file"]["size"] > 0)
 $file = fopen($filename, "r");
 while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
 {
-
-
 $sql = "INSERT into employeeinfo (emp_id,firstname,lastname,email,reg_date)
 values ('".$getData[0]."','".$getData[1]."','".$getData[2]."','".$getData[3]."','".$getData[4]."')";
 $result = mysqli_query($con, $sql);
@@ -29,7 +27,6 @@ echo "<script type=\"text/javascript\">
 					</script>";
 }
 }
-
 fclose($file);
 }
 }

@@ -6,8 +6,17 @@
     font-family: Consolas;
     font-weight: bold;
     color: coral;
-    padding-left: 250px;
+    /*padding-left: 250px;*/
+    alignment: center;
 }
+.upload_message{
+    font-family: Consolas;
+    font-weight: bold;
+    color: coral;
+    /*padding-left: 250px;*/
+    alignment: center;
+}
+
 .signup_form{
     padding-left: 200px;
 }

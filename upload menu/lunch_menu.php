@@ -31,7 +31,8 @@ session_start();
                 <li class="active"><a href="../login_dashboard.php">Home</a></li>
                 <li><a href="lunch_menu.php">Upload Menu</a></li>
                 <li><a href="../view_menu/view_lunch_menu.php">View Menu</a></li>
-                <li><a href="">Update Menu</a> </li>
+                <li><a href="../update_menu/update_lunch_menu.php">Update Menu</a> </li>
+                <li><a href="../download/download_lunch.php">Download Menu</a> </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">

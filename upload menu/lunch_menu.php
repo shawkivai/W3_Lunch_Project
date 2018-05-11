@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+$connect=mysqli_connect("localhost","root","","w3_lunch");
+
+$query="select * from tbl_files";
+
+$result=mysqli_query($connect,$query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,6 +95,34 @@ session_start();
     </form>
     </div>
 </div>
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th class="info">ID</th>
+                <th class="info">File Name</th>
+                <th class="info">File_type</th>
+                <th class="info">Uploaded Date</th>
+
+            </tr>
+            <?php
+            while($row = mysqli_fetch_array($result))
+            {
+                echo '
+      <tr class="success">
+       <td>'.$row["id"].'</td>
+       <td>'.$row["file_name"].'</td>
+       <td>'.$row["file_type"].'</td>
+        <td>'.$row["uploaded_date"].'</td>
+      </tr>
+      ';
+            }
+            ?>
+        </table>
+    </div>
+
+
 </div>
 <script src="../Js/custom-file-input.js"></script>
 </body>

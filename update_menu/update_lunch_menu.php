@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--    <link rel="stylesheet" type="text/css" href="../css/login_style.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/login_style.css">
     <link rel="stylesheet" type="text/css" href="../css/home.css">
     <script rel="stylesheet" type="text/javascript" src="../Js/login.js"></script>
 </head>
@@ -19,8 +19,14 @@ session_start();
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand w3_engineers" href="../index.php">W3 Engineers Ltd.</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand w3_engineers" href="">W3 Engineers Ltd.</a>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li class="active"><a href="../login_dashboard.php">Home</a></li>
             <li><a href="../view_menu.php"> View Menu</a> </li>
@@ -39,14 +45,14 @@ session_start();
                 </ul>
             </li>
         </ul>
+        </div>
     </div>
 </nav>
 <div class="container">
-    <h1 class="lunch_header">Welcome to W3 Engineers Lunch Admin Panel
-        <br>
+    <h1 class="lunch_header">
        Please Update The Lunch Menu
     </h1>
-    <form action="../update_db.php" method="post" enctype="multipart/form-data">
+    <form action="../update_lunch_db.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label class="control-label col-sm-2">Update Menu</label>
             <div class="col-sm-3">

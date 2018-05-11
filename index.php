@@ -23,20 +23,6 @@ if(isset($_SESSION['user'])){
     <script rel="stylesheet" type="text/javascript" src="Js/login.js"></script>
 </head>
 <body>
-
-<!--<nav class="navbar navbar-inverse">-->
-<!--    <div class="container-fluid">-->
-<!--        <div class="navbar-header">-->
-<!--            <a class="navbar-brand w3_engineers" href="#">W3 Engineers Ltd.</a>-->
-<!--        </div>-->
-<!--        <ul class="nav navbar-nav navbar-right">-->
-<!--            <li><a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
-<!--            <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</nav>-->
-
-
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -56,12 +42,10 @@ if(isset($_SESSION['user'])){
     </div>
 </nav>
 
-
-
 <div class="container">
     <div class="row">
 
-        <h1 class="lunch_header">W3 Engineers Lunch Admin Panel</h1>
+        <center><h1 class="lunch_header">W3 Engineers FOOD Admin Panel</h1></center></div>
     </div>
 
 

@@ -61,9 +61,10 @@ session_start();
 </nav>
 
 <div class="container">
-    <h1 class="lunch_header">Welcome to W3 Engineers Food Admin Panel
+    <<center><h1 class="lunch_header">Welcome to W3 Engineers Food Admin Panel
 
     </h1>
+    </center>
 <!--    <form action="upload_menu.php" method="post" enctype="multipart/form-data">-->
 <!--        <div class="form-group">-->
 <!--            <label class="control-label col-sm-2">Upload Menu</label>-->
@@ -78,6 +79,21 @@ session_start();
 <!--            </div>-->
 <!--        </div>-->
 <!--    </form>-->
+    <br><br>
+
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+
+    </div>
+
 </div>
 
 </body>

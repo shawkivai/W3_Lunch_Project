@@ -6,8 +6,7 @@
     font-family: Consolas;
     font-weight: bold;
     color: coral;
-    /*padding-left: 250px;*/
-    alignment: center;
+
 }
 .upload_message{
     font-family: Consolas;
@@ -26,4 +25,9 @@
 #button-pos{
     padding-right: auto;
 
+}
+
+.lunch_image{
+    width: 300px;
+    height: 300px;
 }

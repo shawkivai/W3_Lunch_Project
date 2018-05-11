@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2018 at 03:36 PM
+-- Generation Time: May 11, 2018 at 04:07 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -210,7 +210,25 @@ CREATE TABLE `lunch_menu` (
 INSERT INTO `lunch_menu` (`id`, `date`, `menu1`, `menu2`, `menu3`, `menu4`, `created_at`) VALUES
 (1, '08-05-2018', 'Suji', 'Wonton', 'Semai', 'Carrot', '2018-05-14 08:08:23.000000'),
 (2, '08-05-2018', 'Wonton', 'jilapi', 'Wonton', 'carrot', '2018-05-08 09:08:23.301804'),
-(3, '08-05-2018', 'Wonton', 'semai', 'noodles', 'Wonton', '2018-05-08 09:08:23.344423');
+(3, '08-05-2018', 'Wonton', 'semai', 'noodles', 'Wonton', '2018-05-08 09:08:23.344423'),
+(4, '08/05/2018', 'Suji', 'Wonton', 'Semai', 'Carrot', '2018-05-11 13:39:31.982155'),
+(5, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 13:39:32.049117'),
+(6, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 13:39:32.100044'),
+(7, '08/05/2018', 'Suji', 'Wonton', 'Semai', 'Carrot', '2018-05-11 13:42:34.899490'),
+(8, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 13:42:34.951452'),
+(9, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 13:42:34.997816'),
+(10, '08/05/2018', 'Suji', 'Wonton', 'Semai', 'Carrot', '2018-05-11 13:47:03.081491'),
+(11, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 13:47:03.130838'),
+(12, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 13:47:03.180914'),
+(13, '08/05/2018', 'Suji', 'Wonton', 'Semai', 'Carrot', '2018-05-11 13:59:58.552388'),
+(14, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 13:59:58.625990'),
+(15, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 13:59:58.676254'),
+(16, '08/05/2018', 'Suji', 'Wonton', 'Semai', 'Carrot', '2018-05-11 14:01:46.378670'),
+(17, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 14:01:46.411132'),
+(18, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 14:01:46.436627'),
+(19, '08/05/2018', 'Suji', 'Wonton', 'Semai', 'Carrot', '2018-05-11 14:02:32.300926'),
+(20, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 14:02:32.392167'),
+(21, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-11 14:02:32.442270');
 
 -- --------------------------------------------------------
 
@@ -236,6 +254,27 @@ INSERT INTO `snacks_menu` (`id`, `date`, `item1`, `item2`, `item3`, `item4`, `cr
 (1, '08/05/2018', 'Suji', 'Wonton', 'Semai', 'Carrot', '2018-05-10 13:51:39'),
 (2, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-10 13:51:39'),
 (3, '08/05/2018', 'Wonton', 'Wonton', 'Wonton', 'Wonton', '2018-05-10 13:51:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_files`
+--
+
+CREATE TABLE `tbl_files` (
+  `id` int(10) NOT NULL,
+  `file_name` varchar(100) NOT NULL,
+  `file_type` varchar(100) NOT NULL,
+  `uploaded_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_files`
+--
+
+INSERT INTO `tbl_files` (`id`, `file_name`, `file_type`, `uploaded_date`) VALUES
+(1, 'snacks.csv', 'CSV', '2018-05-11 14:02:49'),
+(2, 'snacks.csv', 'CSV', '2018-05-11 14:02:44');
 
 -- --------------------------------------------------------
 
@@ -379,6 +418,12 @@ ALTER TABLE `snacks_menu`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_files`
+--
+ALTER TABLE `tbl_files`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_lunch_order`
 --
 ALTER TABLE `tbl_lunch_order`
@@ -422,13 +467,19 @@ ALTER TABLE `employee_table`
 -- AUTO_INCREMENT for table `lunch_menu`
 --
 ALTER TABLE `lunch_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `snacks_menu`
 --
 ALTER TABLE `snacks_menu`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_files`
+--
+ALTER TABLE `tbl_files`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_lunch_order`

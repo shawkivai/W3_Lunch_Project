@@ -84,8 +84,6 @@ $result=mysqli_query($connect,$query);
             ?>
         </table>
     </div>
-
-
 </div>
 
 </body>

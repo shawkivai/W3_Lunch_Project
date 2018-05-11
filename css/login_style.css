@@ -8,13 +8,13 @@
 @media only screen and (max-width: 600px) {
     body, html {
         height: 100%;
-        background-color: darkgray;
+        background-color: whitesmoke;
     }
 
 }
 body, html {
     height: 100%;
-    background-color: darkgray;
+    background-color:whitesmoke;
 }
 
 
@@ -153,5 +153,5 @@ body, html {
 .forgot-password:hover,
 .forgot-password:active,
 .forgot-password:focus{
-    color: rgb(12, 97, 33);
+    /*color: rgb(12, 97, 33);*/
 }

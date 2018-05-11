@@ -9,8 +9,14 @@ session_start();
 $connect=mysqli_connect("localhost","root","","w3_lunch");
 if(isset($_POST['upload'])){
     $i=0;
+
     if($_FILES['file']['name']){
+        $file_name=$_FILES['file']['name'];
         $filename=explode('.',$_FILES['file']['name']);
+
+        $query_file_name="insert into tbl_files (file_name,file_type) VALUES ('$file_name','$filename')";
+        mysqli_query($connect,$query_file_name);
+
         if(end($filename)=="csv"){
             $handle=fopen($_FILES['file']['tmp_name'],"r");
             while ($data=fgetcsv($handle)) {
@@ -23,12 +29,15 @@ if(isset($_POST['upload'])){
                 if ($i > 0) {
                     $query = "insert into lunch_menu (date, menu1, menu2, menu3, menu4) VALUES ('$date','$menu1','$menu2','$menu3','$menu4')";
 
+
 //                    $query2="DELETE FROM lunch_menu WHERE expired_date <= NOW()";
                     mysqli_query($connect, $query);
                 }
                 $i++;
             }
             fclose($handle);
+
+
             header("location:index.php");
         }else {
 

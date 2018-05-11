@@ -1,8 +1,20 @@
 <?php
 session_start();
+
+$connect=mysqli_connect("localhost","root","","w3_lunch");
+
+$query="select created_at from lunch_menu limit 1";
+$query2="select created_at from snacks_menu limit 1";
+
+$result_lunch=mysqli_query($connect,$query);
+$result_snacks=mysqli_query($connect,$query2);
+$row = mysqli_fetch_array($result_lunch);
+$row2=mysqli_fetch_array($result_snacks);
+$time=$row['created_at'];
+$snacks_update=$row2['created_at'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>W3 Lunch</title>
     <meta charset="utf-8">
@@ -10,9 +22,11 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/login_style.css">
+<!--    <link rel="stylesheet" type="text/css" href="css/login_style.css">-->
     <link rel="stylesheet" type="text/css" href="css/home.css">
-    <script rel="stylesheet" type="text/javascript" src="Js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/slider_images.css">
+    <script type="text/javascript" src="Js/slider_images.js"></script>
+    <script type="text/javascript" src="Js/login.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -59,42 +73,78 @@ session_start();
     </div>
     </div>
 </nav>
-
 <div class="container">
-    <<center><h1 class="lunch_header">Welcome to W3 Engineers Food Admin Panel
-
-    </h1>
+    <center><h1 class="lunch_header">Welcome to W3 Engineers Food Admin Panel</h1>
     </center>
-<!--    <form action="upload_menu.php" method="post" enctype="multipart/form-data">-->
-<!--        <div class="form-group">-->
-<!--            <label class="control-label col-sm-2">Upload Menu</label>-->
-<!--            <div class="col-sm-3">-->
-<!--                <input type="file" class="form-control"  placeholder="upload file" name="file">-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--        <div class="form-group">-->
-<!--            <div class="col-sm-offset-2 col-sm-3">-->
-<!--                <button type="submit" class="btn btn-success" name="upload">Upload</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </form>-->
     <br><br>
-
+    <br><br>
     <div class="row">
-        <div class="col-md-4">
-
+        <div class="col-md-5">
+            <p class="lunch_item"> Lunch Items</p>
+            <div class="thumbnail">
+                <div id="myCarousel2" class="carousel slide " data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+<!--                            <img id="sale-image" src="images/sale.png" class="img-responsive center-block">-->
+                            <img id="" src="images/lunch1.jpg" class="img-responsive center-block">
+                        </div>
+                        <div class="item">
+                            <img id="" src="images/lunch3.jpg" class="img-responsive center-block">
+                        </div>
+                        <div class="item">
+                            <img id="" src="images/lunch2.jpg" class="img-responsive center-block">
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel2" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel2" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="col-md-2">
-
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5">
+            <p class="lunch_item">Snacks items</p>
+            <div class="thumbnail">
+                <div id="myCarousel3" class="carousel slide " data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <!--                            <img id="sale-image" src="images/sale.png" class="img-responsive center-block">-->
+                            <img id="" src="images/snack1.jpg" class="img-responsive center-block">
+                        </div>
+                        <div class="item">
+                            <img id="" src="images/snack2.jpg" class="img-responsive center-block">
+                        </div>
 
+                        <div class="item">
+                            <img id="" src="images/snack3.jpg" class="img-responsive center-block">
+                        </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel3" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel3" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
         </div>
-
     </div>
-
 </div>
+<footer>
+    <center><p class="notification"> Lunch Menu Uploaded at <?php echo $time ?> </p></center>
+    <center><p class="notification"> Snacks updated at <?php echo $snacks_update?>  </p></center>
+</footer>
+
 
 </body>
 </html>

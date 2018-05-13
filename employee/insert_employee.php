@@ -7,7 +7,7 @@
  */
 
 
-$connect=mysqli_connect("localhost","root","","w3_lunch");
+require ("../database/db_config.php");
 
 
 // Check connection

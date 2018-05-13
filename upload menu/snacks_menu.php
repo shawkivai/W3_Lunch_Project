@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$connect=mysqli_connect("localhost","root","","w3_lunch");
+require ("../database/db_config.php");
 
 $query="select * from tbl_snacks_files limit 5";
 
@@ -41,8 +41,8 @@ $result=mysqli_query($connect,$query);
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="../login_dashboard.php">Home</a></li>
-                <li><a href="../view_menu/view_lunch_menu.php">View Snacks Menu</a></li>
-                <li><a href="../update_menu/update_lunch_menu.php">Update Snacks Menu</a> </li>
+                <li><a href="../view_menu/view_snacks_menu.php">View Snacks Menu</a></li>
+                <li><a href="../update_menu/update_snacks_menu.php">Update Snacks Menu</a> </li>
                 <li><a href="../download/download_lunch.php">Download Snacks Order</a> </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -63,7 +63,7 @@ $result=mysqli_query($connect,$query);
 </nav>
 <div class="container">
     <center><h1 class="lunch_header"> Please Upload the Snacks menu for this Month</h1></center>
-    <div class="row">
+    <div class="row" id="upload_lunch_menu_view">
         <div class="col-md-3 drop_menu">
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Snacks

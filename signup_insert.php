@@ -6,9 +6,7 @@
  * Time: 12:02 AM
  */
 
-    $connect=mysqli_connect("localhost","root","","w3_lunch");
-
-
+require ("database/db_config.php");
 // Check connection
 if($connect === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());

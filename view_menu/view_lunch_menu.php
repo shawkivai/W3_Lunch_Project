@@ -3,7 +3,7 @@
 <?php
 
 session_start();
-$connect=mysqli_connect("localhost","root","","w3_lunch");
+require ("../database/db_config.php");
 
 $query="select * from lunch_menu";
 
@@ -42,7 +42,18 @@ $result=mysqli_query($connect,$query);
             <li><a href="../update_menu/update_lunch_menu.php" id="menu_update"> Update Menu</a> </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="../index.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <?php
+                    echo $_SESSION['user'];
+                    ?>
+                    <span class="glyphicon glyphicon-log-in"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="../logout.php">Logout</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
     </div>

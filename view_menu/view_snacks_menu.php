@@ -3,8 +3,7 @@
 <?php
 
 session_start();
-$connect=mysqli_connect("localhost","root","","w3_lunch");
-
+require ("../database/db_config.php");
 $query="select * from snacks_menu";
 
 $result=mysqli_query($connect,$query);
@@ -39,10 +38,20 @@ $result=mysqli_query($connect,$query);
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li class="active"><a href="../login_dashboard.php">Home</a></li>
-            <li><a href="../update_menu/update_lunch_menu.php" id="menu_update"> Update Menu</a> </li>
+            <li><a href="../update_menu/update_snacks_menu.php" id="menu_update"> Update Snacks Menu</a> </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="../index.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <?php
+                    echo $_SESSION['user'];
+                    ?>
+                    <span class="glyphicon glyphicon-log-in"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="../logout.php">Logout</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
     </div>

@@ -2,8 +2,7 @@
 
 <?php
 
-
-$connect=mysqli_connect("localhost","root","","w3_lunch");
+require ("database/db_config.php");
 
 $query="select * from employee_table";
 

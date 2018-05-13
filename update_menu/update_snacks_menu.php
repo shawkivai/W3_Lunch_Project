@@ -1,5 +1,11 @@
 <?php
 session_start();
+require ("../database/db_config.php");
+
+$query="select * from tbl_snacks_files limit 5";
+
+$result=mysqli_query($connect,$query);
+
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +36,10 @@ session_start();
             </button>
             <a class="navbar-brand w3_engineers" href="../index.php">W3 Engineers Ltd.</a>
         </div>
-
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li class="active"><a href="../login_dashboard.php">Home</a></li>
-            <li><a href="../view_menu.php"> View Menu</a> </li>
+            <li><a href="../view_menu/view_snacks_menu.php"> View Snacks Menu</a> </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -43,7 +48,6 @@ session_start();
                     echo $_SESSION['user'];
                     ?>
                     <span class="glyphicon glyphicon-log-in"></span>
-
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="../logout.php">Logout</a></li>
@@ -56,7 +60,7 @@ session_start();
 <div class="container">
     <center><h1 class="lunch_header">Please Update The Snacks Menu</h1></center>
 
-    <div class="row">
+    <div class="row" id="upload_lunch_menu_view">
         <div class="col-md-3 drop_menu">
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Snacks
@@ -85,6 +89,33 @@ session_start();
             </form>
         </div>
     </div>
+
+    <center><h1 class="lunch_header"> Uploaded Files</h1></center>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th class="info">ID</th>
+                <th class="info">File Name</th>
+                <th class="info">File_type</th>
+                <th class="info">Uploaded Date</th>
+            </tr>
+            <?php
+            while($row = mysqli_fetch_array($result))
+            {
+                echo '
+      <tr class="success">
+       <td>'.$row["id"].'</td>
+       <td>'.$row["file_name"].'</td>
+       <td>'.$row["file_type"].'</td>
+        <td>'.$row["uploaded_date"].'</td>
+      </tr>
+      ';
+            }
+            ?>
+        </table>
+    </div>
+
+
 </div>
 </body>
 </html>

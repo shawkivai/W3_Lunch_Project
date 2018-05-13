@@ -6,13 +6,119 @@
         overflow-y:scroll;
         background-color: whitesmoke;
     }
+    #upload_lunch_menu_view{
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .drop_menu{
+        padding-top: 15px;
+        padding-left: 200px;
+    }
+
+    .form_edit{
+        padding-left: 0px;
+    }
+
+    }
+
+
+@media only screen and (max-width: 992px) and (min-width: 600px){
+
+    body {
+        overflow-x:hidden ;
+        overflow-y:scroll;
+        background-color: whitesmoke;
+    }
+
+    #upload_lunch_menu_view {
+        width: 100%;
+        float: left;
+
+    }
+
+    .col-md-3.drop_menu{
+        padding-top: 15px;
+        padding-left: 20px;
+    }
+
+    .col-md-9.form_edit{
+        padding-top: 20px;
+        padding-left: 0px;
+    }
+
 
 }
+
+
+@media only screen and (max-width: 600px){
+
+    body {
+        overflow-x:hidden ;
+        overflow-y:scroll;
+        background-color: whitesmoke;
+    }
+
+    #upload_lunch_menu_view {
+        width: 100%;
+    }
+
+    .col-md-3.drop_menu{
+        padding-top: 15px;
+        alignment: center;
+    }
+
+    .col-md-9.form_edit{
+        padding-top: 20px;
+        alignment: center;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 380px) and (min-width: 300px){
+
+    body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: whitesmoke;
+    }
+
+    #upload_lunch_menu_view {
+        width: 120%;
+        float: left;
+
+
+    }
+    .col-md-3.drop_menu{
+        padding-top: 0px;
+        alignment: center;
+
+
+    }
+    .col-md-9.form_edit{
+        padding-top: 20px;
+        alignment: center;
+
+    }
+
+}
+
+
 
 body{
     overflow-x:hidden ;
     overflow-y: scroll;
     background-color: whitesmoke;
+}
+
+.file_upload_text{
+
+    padding-left: 420px;
+    font-weight: bold;
+    color: coral;
+    font-family: Consolas;
 }
 
 [class*="col-md-"] {
@@ -162,7 +268,7 @@ footer{
 }
 
 .form_edit{
-    padding-left: 150px;
+    padding-left: 200px;
 
 }
 .inputfile {

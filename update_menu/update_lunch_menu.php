@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+require ("../database/db_config.php");
+
+$query="select * from tbl_lunch_files limit 5";
+
+$result=mysqli_query($connect,$query);
+
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +34,12 @@ session_start();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand w3_engineers" href="">W3 Engineers Ltd.</a>
+                <a class="navbar-brand w3_engineers" href="../login_dashboard.php">W3 Engineers Ltd.</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
             <li class="active"><a href="../login_dashboard.php">Home</a></li>
-            <li><a href="../view_menu/view_lunch_menu.php"> View Menu</a> </li>
+            <li><a href="../view_menu/view_lunch_menu.php"> View Lunch Menu</a> </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -52,7 +59,7 @@ session_start();
 </nav>
 <div class="container">
     <center><h1 class="lunch_header">Please Update The Lunch Menu</h1></center>
-    <div class="row update_menu">
+    <div class="row update_menu" id="upload_lunch_menu_view">
         <div class="col-md-3 drop_menu">
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Lunch
@@ -84,6 +91,31 @@ session_start();
 
     </div>
 
+    <center><h1 class="lunch_header"> Uploaded Files</h1></center>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th class="info">ID</th>
+                <th class="info">File Name</th>
+                <th class="info">File_type</th>
+                <th class="info">Uploaded Date</th>
+
+            </tr>
+            <?php
+            while($row = mysqli_fetch_array($result))
+            {
+                echo '
+      <tr class="success">
+       <td>'.$row["id"].'</td>
+       <td>'.$row["file_name"].'</td>
+       <td>'.$row["file_type"].'</td>
+        <td>'.$row["uploaded_date"].'</td>
+      </tr>
+      ';
+            }
+            ?>
+        </table>
+    </div>
 
 </div>
 <script src="../Js/custom-file-input.js"></script>

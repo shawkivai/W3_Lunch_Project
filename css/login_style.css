@@ -6,11 +6,10 @@
  */
 
 @media only screen and (max-width: 600px) {
-    body, html {
-        height: 100%;
-        background-color: whitesmoke;
-    }
-
+        body, html {
+            height: 100%;
+            background-color: whitesmoke;
+        }
 }
 body, html {
     height: 100%;

@@ -3,15 +3,15 @@ session_start();
 
 $connect=mysqli_connect("localhost","root","","w3_lunch");
 
-$query="select created_at from lunch_menu limit 1";
-$query2="select created_at from snacks_menu limit 1";
+$query1="select uploaded_date from tbl_lunch_files order by id DESC limit 1";
+$query2="select uploaded_date from tbl_snacks_files order BY id DESC limit 1";
 
-$result_lunch=mysqli_query($connect,$query);
+$result_lunch=mysqli_query($connect,$query1);
 $result_snacks=mysqli_query($connect,$query2);
-$row = mysqli_fetch_array($result_lunch);
+$row1= mysqli_fetch_array($result_lunch);
 $row2=mysqli_fetch_array($result_snacks);
-$time=$row['created_at'];
-$snacks_update=$row2['created_at'];
+$time=$row1['uploaded_date'];
+$snacks_update=$row2['uploaded_date'];
 ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
@@ -22,14 +22,17 @@ $snacks_update=$row2['created_at'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--    <link rel="stylesheet" type="text/css" href="css/login_style.css">-->
     <link rel="stylesheet" type="text/css" href="css/home.css">
     <link rel="stylesheet" type="text/css" href="css/slider_images.css">
     <script type="text/javascript" src="Js/slider_images.js"></script>
+
     <script type="text/javascript" src="Js/login.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -73,11 +76,15 @@ $snacks_update=$row2['created_at'];
     </div>
     </div>
 </nav>
+<br><br>
 <div class="container">
     <center><h1 class="lunch_header">Welcome to W3 Engineers Food Admin Panel</h1>
     </center>
     <br><br>
     <br><br>
+
+
+
     <div class="row">
         <div class="col-md-5">
             <p class="lunch_item"> Lunch Items</p>
@@ -119,7 +126,7 @@ $snacks_update=$row2['created_at'];
                             <img id="" src="images/snack1.jpg" class="img-responsive center-block">
                         </div>
                         <div class="item">
-                            <img id="" src="images/snack2.jpg" class="img-responsive center-block">
+                            <img id="" src="images/snack2.JPG" class="img-responsive center-block">
                         </div>
 
                         <div class="item">

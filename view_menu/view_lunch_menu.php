@@ -25,11 +25,18 @@ $result=mysqli_query($connect,$query);
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand w3_engineers" href="../index.php">W3 Engineers Ltd.</a>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+
         <ul class="nav navbar-nav">
             <li class="active"><a href="../login_dashboard.php">Home</a></li>
             <li><a href="../update_menu/update_lunch_menu.php" id="menu_update"> Update Menu</a> </li>
@@ -38,26 +45,42 @@ $result=mysqli_query($connect,$query);
             <li><a href="../index.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
     </div>
+    </div>
 </nav>
-
+<br><br>
 <div class="container">
+<div class="row">
+    <div class="col-md-9">
+    <center> <h1 class="lunch_header view_menu_text">This Month Lunch Menu List</h1></center>
+    </div>
+    <div class="col-md-3 drop_menu1">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="" data-toggle="dropdown">Lunch
+                <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" >
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="view_snacks_menu.php">Snacks</a></li>
 
-    <h1 class="lunch_header">This Month Lunch Menu List</h1>
+            </ul>
+        </div>
+    </div>
 
+</div>
+    <br>
     <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-            <tr>
-                <th class="info">Date</th>
-                <th class="info">Fixed Item</th>
-                <th class="info">Item1</th>
-                <th class="info">Item2</th>
-                <th class="info">Item3</th>
-                <th class="info">Created_at</th>
-            </tr>
-            <?php
-            while($row = mysqli_fetch_array($result))
-            {
-                echo '
+
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th class="info">Date</th>
+                        <th class="info">Fixed Item</th>
+                        <th class="info">Item1</th>
+                        <th class="info">Item2</th>
+                        <th class="info">Item3</th>
+                        <th class="info">Created_at</th>
+                    </tr>
+                    <?php
+                    while($row = mysqli_fetch_array($result))
+                    {
+                        echo '
       <tr class="success">
        <td>'.$row["date"].'</td>
        <td>'.$row["menu1"].'</td>
@@ -67,11 +90,11 @@ $result=mysqli_query($connect,$query);
           <td>'.$row["created_at"].'</td>
       </tr>
       ';
-            }
-            ?>
-        </table>
-    </div>
+                    }
+                    ?>
+                </table>
 
+        </div>
 
 </div>
 

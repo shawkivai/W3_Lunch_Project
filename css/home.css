@@ -1,3 +1,47 @@
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        overflow-x:hidden ;
+        overflow-y:scroll;
+        background-color: whitesmoke;
+    }
+
+}
+
+body{
+    overflow-x:hidden ;
+    overflow-y: scroll;
+    background-color: whitesmoke;
+}
+
+[class*="col-md-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For desktop: */
+    .col-md-1 {width: 8.33%;}
+    .col-md-2 {width: 16.66%;}
+    .col-md-3 {width: 25%;}
+    .col-md-4 {width: 33.33%;}
+    .col-md-5 {width: 41.66%;}
+    .col-md-6 {width: 50%;}
+    .col-md-7 {width: 58.33%;}
+    .col-md-8 {width: 66.66%;}
+    .col-md-9 {width: 75%;}
+    .col-md-10 {width: 83.33%;}
+    .col-md-11 {width: 91.66%;}
+    .col-md-12 {width: 100%;}
+}
+
+@media screen and (max-width: 600px) {
+    .col-md-3, .col-md-9, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+
 .w3_engineers{
     font-family: Consolas;
     font-size: 20px;
@@ -110,8 +154,16 @@ footer{
     padding-top: 15px;
     padding-left: 200px;
 }
+
+.drop_menu1{
+    padding-top: 30px;
+    float: left;
+
+}
+
 .form_edit{
     padding-left: 150px;
+
 }
 .inputfile {
     width: 0.1px;
@@ -131,7 +183,7 @@ footer{
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-    background-color: red;
+    background-color: navy;
 }
 .inputfile + label {
     cursor: pointer; /* "hand" cursor */
@@ -139,4 +191,12 @@ footer{
 .inputfile:focus + label {
     outline: 1px dotted #000;
     outline: -webkit-focus-ring-color auto 5px;
+}
+
+.view_menu{
+    padding-left: 300px;
+}
+.view_menu_text{
+    padding-left: 80px;
+    padding-top: 5px;
 }

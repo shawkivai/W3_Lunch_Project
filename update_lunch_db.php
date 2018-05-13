@@ -32,7 +32,7 @@ if(isset($_POST['update'])){
                 $i++;
             }
             fclose($handle);
-            header("location:index.php");
+            header("location:view_menu/view_lunch_menu.php");
         }else {
 
             echo "not updated";

@@ -23,7 +23,7 @@ if(isset($_SESSION['user'])){
     <script rel="stylesheet" type="text/javascript" src="Js/login.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,13 +35,13 @@ if(isset($_SESSION['user'])){
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                 <li><a href="index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
+<br><br>
 <div class="container">
     <div class="row">
 
@@ -54,9 +54,8 @@ if(isset($_SESSION['user'])){
         <img class="card_image" src="images/w3%20engineers.png">
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" method="post" action="login_check.php">
-
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" id="" class="form-control" placeholder="Email address" name="username" required autofocus>
+            <input type="text" id="" class="form-control" placeholder="Offiece_id" name="offiece_id" required autofocus>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
             <div id="remember" class="checkbox">
                 <label>

@@ -44,8 +44,7 @@ $result=mysqli_query($connect,$query);
 
 <div class="container">
 
-    <h1 class="lunch_header">Employees Of W3 Engineers
-    </h1>
+    <center><h1 class="lunch_header">Employee List of W3 Engineers</h1></center>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">

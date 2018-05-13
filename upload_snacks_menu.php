@@ -10,8 +10,11 @@ $connect=mysqli_connect("localhost","root","","w3_lunch");
 if(isset($_POST['upload'])){
     $i=0;
     if($_FILES['file']['name']){
+        $file_name=$_FILES['file']['name'];
         $filename=explode('.',$_FILES['file']['name']);
         if(end($filename)=="csv"){
+            $query_file_name = "insert into tbl_snacks_files (file_name,file_type) VALUES ('$file_name','$filename[1]')";
+            mysqli_query($connect, $query_file_name);
             $handle=fopen($_FILES['file']['tmp_name'],"r");
             while ($data=fgetcsv($handle)) {
                 $date = mysqli_real_escape_string($connect, $data[0]);
@@ -29,7 +32,7 @@ if(isset($_POST['upload'])){
                 $i++;
             }
             fclose($handle);
-            header("location:index.php");
+            header("location:view_menu/view_snacks_menu.php");
         }else {
 
             echo "not updated";

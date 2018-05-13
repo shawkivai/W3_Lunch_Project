@@ -45,7 +45,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input  name="employee_id" placeholder="First Name" class="form-control"  type="text">
+                        <input  name="employee_id" placeholder="First Name" class="form-control"  type="text" required>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input name="username" placeholder="Last Name" class="form-control"  type="text">
+                        <input name="username" placeholder="Last Name" class="form-control"  type="text" required>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <div class="col-md-4 selectContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        <select name="team" class="form-control selectpicker">
+                        <select name="team" class="form-control selectpicker" required>
                             <option value="">Select Team</option>
                             <option>Android</option>
                             <option>IOS</option>
@@ -86,7 +86,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input  name="mobile_no" placeholder="Cell No." class="form-control"  type="text">
+                        <input  name="mobile_no" placeholder="Cell No." class="form-control"  type="number" required>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                 <div class="col-md-4 inputGroupContainer">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                        <input name="email" placeholder="E-Mail Address" class="form-control"  type="email" required>
                     </div>
                 </div>
             </div>
